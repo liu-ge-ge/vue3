@@ -2,6 +2,7 @@
 > vite 、eslint、prettier、husky、commitlint、lint-staged、stylelint
 
 ### eslint
+pnpm install eslint eslint-plugin-vue eslint-config-prettier prettier eslint-plugin-import eslint-plugin-prettier eslint-config-airbnb-base -D
 devDependencies:
 + eslint 8.41.0 (eslint核心库)
 + eslint-config-airbnb-base 15.0.0 (airbnb的代码规范:依赖plugin-import)
@@ -130,6 +131,7 @@ plugins: [vue(), eslintPlugin()]
 
  然后就是添加各种git hooks
  pre-commit 一般添加的是lint-staged，去对git暂存区的代码做一些格式化的操作
+npx husky add .husky/pre-commit "npx lint-staged"
 
  pnpm install @commitlint/config-conventional @commitlint/cli -D
 安装这两个库，然后新建一个config文件(commitlint.config.cjs)
@@ -144,7 +146,7 @@ npx husky add .husky/commit-msg "npx --no -- commitlint --edit ${1}"
 ```
 
 ```js
-
+commitlint.config.cjs
 module.exports = {
 	extends: ['@commitlint/config-conventional'],
 	rules: {

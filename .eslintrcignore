@@ -1,4 +1,3 @@
-.eslintrcignore文件内容：
 
 *.sh
 node_modules
@@ -42,3 +41,4 @@ dist-ssr
 *.sw?
 
 components.d.ts
+*.d.ts

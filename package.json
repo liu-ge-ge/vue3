@@ -11,7 +11,9 @@
     "lint": "eslint \"src/**/*.{js,vue,ts}\" --fix",
     "prettier-format": "prettier --config .prettierrc.cjs \"src/**/*.{vue,js,ts}\" --write",
     "prepare": "husky install",
-    "lint:css": "stylelint **/*.{vue,css,less} --fix"
+    "lint:css": "stylelint **/*.{vue,css,less} --fix",
+    "build:pre": "vue-tsc --noEmit && vite build --mode staging",
+    "build:pro": "vue-tsc --noEmit && vite build --mode production"
   },
   "dependencies": {
     "vue": "^3.2.47"

@@ -131,4 +131,58 @@ plugins: [vue(), eslintPlugin()]
  然后就是添加各种git hooks
  pre-commit 一般添加的是lint-staged，去对git暂存区的代码做一些格式化的操作
 
+ pnpm install @commitlint/config-conventional @commitlint/cli -D
+安装这两个库，然后新建一个config文件(commitlint.config.cjs)
+
+添加到git钩子里
+npx husky add .husky/commit-msg "npx --no -- commitlint --edit ${1}"
+通过一个命令添加钩子
+
+使用git commit -m "提交说明"，进行提交，提交说明应尽量清晰明了，说明本次提交的目的
+推荐使用Angular规范，这是目前使用最广的写法
+
+```
+
+```js
+
+module.exports = {
+	extends: ['@commitlint/config-conventional'],
+	rules: {
+		'type-enum': [
+			2,
+			'always',
+			[
+				// 编译相关的修改，例如发布版本，对项目构建或者依赖的改动
+				'build',
+				// 新功能(feature)
+				'feat',
+				// 修复bug
+				'fix',
+				// 更新某功能
+				'update',
+				// 重构
+				'refactor',
+				// 文档
+				'docs',
+				// 构建过程或者辅助工具的变动,如增加依赖库等
+				'chore',
+				// 不影响代码运行的变动
+				'style',
+				// 撤销commit,回滚到上一个版本
+				'revert',
+				// 性能优化
+				'perf',
+				// 测试(单元,集成测试)
+				'test',
+			],
+		],
+		'type-case': [0],
+		'type-empty': [0],
+		'scope-empty': [0],
+		'scope-case': [0],
+		'subject-full-stop': [0, 'never'],
+		'subject-case': [0, 'never'],
+		'header-max-length': [0, 'always', 74],
+	},
+};
 ```

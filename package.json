@@ -10,13 +10,14 @@
     "lint:create": "eslint --init",
     "lint": "eslint \"src/**/*.{js,vue,ts}\" --fix",
     "prettier-format": "prettier --config .prettierrc.cjs \"src/**/*.{vue,js,ts}\" --write",
-    "prepare": "husky install",
-    "": ""
+    "prepare": "husky install"
   },
   "dependencies": {
     "vue": "^3.2.47"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
     "@types/eslint": "^8.40.0",
     "@types/node": "^20.2.3",
     "@typescript-eslint/eslint-plugin": "^5.59.7",

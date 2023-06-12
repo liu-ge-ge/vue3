@@ -22,8 +22,7 @@
 		"baseUrl": ".",
 		// 模块名到基于baseurl的路径映射的列表
 		"paths": {
-			"@/": ["scr/"],
-			"*.ts": ["*"]
+			"@/": ["scr/"]
 		}
 	},
 	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],

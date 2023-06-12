@@ -63,5 +63,6 @@ module.exports = {
 		'vue/attribute-hyphenation': 0,
 		'vue/v-on-event-hyphenation': 0,
 		'no-unused-vars': 'off',
+		'no-console': 'off',
 	},
 }
